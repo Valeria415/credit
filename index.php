@@ -27,13 +27,30 @@ border: 0 none; }
 <form method="post" action="index.php"
       enctype="multipart/form-data" >
 Фамилия  <input type="text"
-       name="familiya" id="name"/></br>
+       name="familiya" id="familiya"/></br>
 Имя  <input type="text"
-       name="name" id="password"/></br>  
+       name="name" id="name"/></br>  
 Отчество  <input type="text"
-       name="confirm_password" id="confirm_password"/></br>
-Email <input type="text"
-       name="Email" id="Email"/>
-
+       name="otchestvo" id="otchestvo"/></br>
+Дата рождения <input type="text"
+       name="birthday" id="birthday"/></br>  
+ИНН  <input type="text"
+       name="inn" id="inn"/></br>  
+Номер телефона <input type="text"
+       name="telefon" id="telefon"/>
+Адрес  <input type="text"
+       name="adres" id="adres"/></br>  
+Серия  <input type="text"
+       name="seria" id="seria"/></br>  
+Номер  <input type="text"
+       name="nomerp" id="nomerp"/></br>  
+Кем выдан  <input type="text"
+       name="kem" id="kem"/></br>  
+Дата выдачи  <input type="text"
+       name="data" id="data"/></br>  
+Код подразделения  <input type="text"
+       name="kodp" id="kodp"/></br>
+<input type="submit"
+name="submit" value="Далее"/>
 </body>
 </html>
