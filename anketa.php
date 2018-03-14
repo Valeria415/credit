@@ -86,25 +86,16 @@ border: 0 none; }
   <option value ="">автомобиль</option>
   <option value ="">нет</option>
 </select></br> 
-Стоимость приобретаемой квартиры  <select name="hom">
-  <option value ="">до $25.000</option>
-  <option value ="">до $50.000</option>
-  <option value ="">до $75.000</option>
-  <option value ="">до $100.000</option>
-  <option value ="">свыше $100.000</option>
-</select></br>
+Стоимость приобретаемой квартиры <input type="text"
+name="hom" id="hom"/></br>
 Срок кредита  <select name="srok">
   <option value ="">1-3 года</option>
   <option value ="">4-6 лет</option>
   <option value ="">7-10 лет</option>
   <option value ="">11-15 лет</option>
 </select></br>
-Начальный капитал (% от стоимости квартиры)  <select name="nachkap">
-  <option value ="">до 30%</option>
-  <option value ="">40%</option>
-  <option value ="">50% </option>
-  <option value ="">больше 50%</option>
-</select></br>
+Начальный капитал <input type="text"
+name="nachkap" id="name"/></br>
 Привлекались ли Вы к уголовной ответственности?  <select name="ugot">
   <option value ="">да</option>
   <option value ="">нет</option>
