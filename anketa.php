@@ -41,45 +41,41 @@ border: 0 none; }
   <option value ="">разведен(а)</option>
   <option value ="">вдовец(ва)</option>
 </select></br>
-Иждевенцы <select name="ij">
-  <option value ="">есть</option>
-  <option value ="">нет</option>
-</select></br>
+Иждевенцы <input type="radio" name="ij" value="d1"> есть
+          <input type="radio" name="ij" value="d2" checked> нет <br/>
 Образование <select name="educat">
-  <option value ="">среднее</option>
+  <option value ="e">среднее</option>
   <option value ="">техническое</option>
   <option value ="">высшее</option>
 </select></br>
 Работа <select name="work">
-  <option value ="">собственное дело</option>
+  <option value ="f">собственное дело</option>
   <option value ="">работа по найму</option>
   <option value ="">работа в бюджетной сфере</option>
 </select></br> 
 Должность <select name="dolj">
-  <option value ="">топ-менеджер</option>
+  <option value ="g">топ-менеджер</option>
   <option value ="">руководитель </option>
   <option value ="">служащий</option>
 </select></br>
 Среднемесячный доход <select name="sel">
-  <option value ="">до $1000</option>
+  <option value ="h">до $1000</option>
   <option value ="">$1000 - 2000</option>
   <option value ="">$2000 - 3000</option>
   <option value ="">больше $3000</option>
 </select></br>
 Прочие источники дохода <select name="prsel">
-  <option value ="">ценные бумаги</option>
+  <option value ="k">ценные бумаги</option>
   <option value ="">вклады </option>
   <option value ="">прочие доходы</option>
   <option value ="">нет</option>
 </select></br>
-Кредитовались ли вы ранее <select name="credit">
-  <option value ="">да</option>
-  <option value ="">нет</option>
-</select></br>
-Имеются ли непогашенные кредиты <select name="npcredit">
-  <option value ="">да</option>
-  <option value ="">нет</option>
-</select></br>
+Кредитовались ли вы ранее
+<input type="radio" name="credit" value="l1"> да
+<input type="radio" name="credit" value="l2" checked> нет </br>
+Имеются ли непогашенные кредиты
+<input type="radio" name="nepcredit" value="m1"> да
+<input type="radio" name="nepcredit" value="m2" checked> нет</br>
 Наличие собственности <select name="prop">
   <option value ="">квартира</option>
   <option value ="">дом, дача</option>
@@ -96,10 +92,9 @@ name="hom" id="hom"/></br>
 </select></br>
 Начальный капитал <input type="text"
 name="nachkap" id="name"/></br>
-Привлекались ли Вы к уголовной ответственности?  <select name="ugot">
-  <option value ="">да</option>
-  <option value ="">нет</option>
-</select></br>
+Привлекались ли Вы к уголовной ответственности?
+<input type="radio" name="nepcredit" value="p1"> да
+<input type="radio" name="nepcredit" value="p2" checked> нет</br>
 <input type="submit"
 name="submit" value="Результат"/>
 </body>
