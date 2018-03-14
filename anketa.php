@@ -26,40 +26,89 @@ border: 0 none; }
 <p>Заполните анкету.</p>
 <form method="post" action="index.php"
       enctype="multipart/form-data" >
-Пол  <select>
-  <option>Муж</option>
-  <option>Жен</option>
+Пол <select name="pol">
+  <option value ="Man">Муж</option>
+  <option value ="Woman">Жен</option>
 </select></br>
-Возраст  <input type="text"
-       name="name" id="name"/></br>  
-Семейное положение  <input type="text"
-       name="otchestvo" id="otchestvo"/></br>
-Иждивенцы <input type="text"
-       name="birthday" id="birthday"/></br>  
-Образование  <input type="text"
-       name="inn" id="inn"/></br>  
-Работа <input type="text"
-       name="telefon" id="telefon"/>
-Должность  <input type="text"
-       name="adres" id="adres"/></br>  
-Среднемесячный доход  <input type="text"
-       name="seria" id="seria"/></br>  
-Прочие источники дохода  <input type="text"
-       name="nomerp" id="nomerp"/></br>  
-Кредитовались ли вы ранее <input type="text"
-       name="kem" id="kem"/></br>  
-Имеются ли непогашенные кредиты <input type="text"
-       name="data" id="data"/></br>  
-Наличие собственности  <input type="text"
-       name="kodp" id="kodp"/></br> 
-Стоимость приобретаемой квартиры  <input type="text"
-       name="kodp" id="kodp"/></br>  
-Срок кредита  <input type="text"
-       name="kodp" id="kodp"/></br>  
-Начальный капитал (% от стоимости квартиры)  <input type="text"
-       name="kodp" id="kodp"/></br>  
-Привлекались ли Вы к уголовной ответственности?  <input type="text"
-       name="kodp" id="kodp"/></br>
+Возраст <select name="age">
+  <option value ="">20-30 лет</option>
+  <option value ="">31-45 лет</option>
+  <option value ="">46-60 лет </option>
+</select></br>  
+Семейное положение <select name="sp">
+  <option value ="">женат (замужем)</option>
+  <option value ="">холост (не замужем)</option>
+  <option value ="">разведен(а)</option>
+  <option value ="">вдовец(ва)</option>
+</select></br>
+Иждевенцы <select name="ij">
+  <option value ="">есть</option>
+  <option value ="">нет</option>
+</select></br>
+Образование <select name="educat">
+  <option value ="">среднее</option>
+  <option value ="">техническое</option>
+  <option value ="">высшее</option>
+</select></br>
+Работа <select name="work">
+  <option value ="">собственное дело</option>
+  <option value ="">работа по найму</option>
+  <option value ="">работа в бюджетной сфере</option>
+</select></br> 
+Должность <select name="dolj">
+  <option value ="">топ-менеджер</option>
+  <option value ="">руководитель </option>
+  <option value ="">служащий</option>
+</select></br>
+Среднемесячный доход <select name="sel">
+  <option value ="">до $1000</option>
+  <option value ="">$1000 - 2000</option>
+  <option value ="">$2000 - 3000</option>
+  <option value ="">больше $3000</option>
+</select></br>
+Прочие источники дохода <select name="prsel">
+  <option value ="">ценные бумаги</option>
+  <option value ="">вклады </option>
+  <option value ="">прочие доходы</option>
+  <option value ="">нет</option>
+</select></br>
+Кредитовались ли вы ранее <select name="credit">
+  <option value ="">да</option>
+  <option value ="">нет</option>
+</select></br>
+Имеются ли непогашенные кредиты <select name="npcredit">
+  <option value ="">да</option>
+  <option value ="">нет</option>
+</select></br>
+Наличие собственности <select name="prop">
+  <option value ="">квартира</option>
+  <option value ="">дом, дача</option>
+  <option value ="">автомобиль</option>
+  <option value ="">нет</option>
+</select></br> 
+Стоимость приобретаемой квартиры  <select name="hom">
+  <option value ="">до $25.000</option>
+  <option value ="">до $50.000</option>
+  <option value ="">до $75.000</option>
+  <option value ="">до $100.000</option>
+  <option value ="">свыше $100.000</option>
+</select></br>
+Срок кредита  <select name="srok">
+  <option value ="">1-3 года</option>
+  <option value ="">4-6 лет</option>
+  <option value ="">7-10 лет</option>
+  <option value ="">11-15 лет/option>
+</select></br>
+Начальный капитал (% от стоимости квартиры)  <select name="nachkap">
+  <option value ="">до 30%</option>
+  <option value ="">40%</option>
+  <option value ="">50% /option>
+  <option value ="">больше 50%</option>
+</select></br>
+Привлекались ли Вы к уголовной ответственности?  <select name="ugot">
+  <option value ="">да</option>
+  <option value ="">нет</option>
+</select></br>
 <input type="submit"
 name="submit" value="Результат"/>
 </body>
