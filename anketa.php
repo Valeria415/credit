@@ -41,8 +41,7 @@ border: 0 none; }
   <option value ="">разведен(а)</option>
   <option value ="">вдовец(ва)</option>
 </select></br>
-Иждевенцы <input type="checkbox" name="ij" value="d1"> есть
-          <input type="checkbox" name="ij" value="d2" checked> нет <br/>
+Иждевенцы <input type="checkbox" name="ij" value="d1">есть<br/>
 Образование <select name="educat">
   <option value ="e">среднее</option>
   <option value ="">техническое</option>
@@ -71,11 +70,9 @@ border: 0 none; }
   <option value ="">нет</option>
 </select></br>
 Кредитовались ли вы ранее
-<input type="checkbox" name="credit" value="l1"> да
-<input type="checkbox" name="credit" value="l2" checked> нет </br>
+<input type="checkbox" name="credit" value="l1"> да </br>
 Имеются ли непогашенные кредиты
-<input type="checkbox" name="nepcredit" value="m1"> да
-<input type="checkbox" name="nepcredit" value="m2" checked> нет</br>
+<input type="checkbox" name="nepcredit" value="m1"> да</br>
 Наличие собственности <select name="prop">
   <option value ="">квартира</option>
   <option value ="">дом, дача</option>
@@ -93,8 +90,7 @@ name="hom" id="hom"/></br>
 Начальный капитал <input type="text"
 name="nachkap" id="name"/></br>
 Привлекались ли Вы к уголовной ответственности?
-<input type="checkbox" name="nepcredit" value="p1"> да
-<input type="checkbox" name="nepcredit" value="p2" checked> нет</br>
+<input type="checkbox" name="nepcredit" value="p1"> да</br>
 <input type="submit"
 name="submit" value="Результат"/>
 </body>
