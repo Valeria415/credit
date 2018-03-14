@@ -67,7 +67,7 @@ print("Error connecting to SQL Server.");
 die(print_r($e));
   }
 // Insert data
-isset($_POST["submit"]{
+isset($_POST["submit"]){
 $sql_insert =
 "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
