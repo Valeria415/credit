@@ -78,4 +78,29 @@ $stmt->bindValue(5, $inn);
 $stmt->bindValue(6, $telefon);
 $stmt->bindValue(7, $adres);
 $stmt->execute();
+
+
+$sql_select = "SELECT * FROM client_tbl";
+$stmt = $conn->query($sql_select);
+$registrants = $stmt->fetchAll();
+if(count($registrants) > 0) {
+    echo "<table>";
+    echo "<tr><th>familiya</th>";
+    echo "<th>name</th>";
+    echo "<th>otchestvo</th>";
+    echo "<th>birthday</th>";
+    echo "<th>inn</th>";
+    echo "<th>telefon</th>";
+    echo "<th>adres</th></tr>";
+    foreach($registrants as $registrant) {
+        echo "<tr><td>".$registrant['familiya']."</td>";
+        echo "<td>".$registrant['name']."</td>";
+        echo "<td>".$registrant['otchestvo']."</td>";
+         echo "<td>".$registrant['birthday']."</td>";
+        echo "<td>".$registrant['inn']."</td>";
+         echo "<td>".$registrant['telefon']."</td>";
+        echo "<td>".$registrant['adres']."</td></tr>";
+    }
+    echo "</table>";}
+}
 ?>
