@@ -97,12 +97,12 @@ border: 0 none; }
   <option value ="">1-3 года</option>
   <option value ="">4-6 лет</option>
   <option value ="">7-10 лет</option>
-  <option value ="">11-15 лет/option>
+  <option value ="">11-15 лет</option>
 </select></br>
 Начальный капитал (% от стоимости квартиры)  <select name="nachkap">
   <option value ="">до 30%</option>
   <option value ="">40%</option>
-  <option value ="">50% /option>
+  <option value ="">50% </option>
   <option value ="">больше 50%</option>
 </select></br>
 Привлекались ли Вы к уголовной ответственности?  <select name="ugot">
