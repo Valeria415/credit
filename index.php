@@ -67,9 +67,8 @@ print("Error connecting to SQL Server.");
 die(print_r($e));
   }
 // Insert data
-isset($_POST["submit"]){
-$sql_insert =
-"INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
+isset($_POST["submit"]) {
+$sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
 $stmt->bindValue(1, $familiya);
 $stmt->bindValue(2, $name);
@@ -102,6 +101,12 @@ if(count($registrants) > 0) {
          echo "<td>".$registrant['telefon']."</td>";
         echo "<td>".$registrant['adres']."</td></tr>";
     }
-    echo "</table>";}
+    echo "</table>";
+   }
+     else {
+    echo "<h3>Ни один пользователь не зарегистрирован.</h3>";
 }
+}
+
+
 ?>
