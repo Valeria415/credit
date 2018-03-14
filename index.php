@@ -68,7 +68,12 @@ die(print_r($e));
   }
 // Insert data
 if(isset($_POST["submit"])) {
-    echo "ok";
+    try {
+$name = $_POST['name'];
+$email = $_POST['Email'];
+$date = date("Y-m-d");
+$password = $_POST['password'];
+        
 $sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
 $stmt->bindValue(1, $familiya);
