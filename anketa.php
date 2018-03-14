@@ -26,8 +26,10 @@ border: 0 none; }
 <p>Заполните анкету.</p>
 <form method="post" action="index.php"
       enctype="multipart/form-data" >
-Пол  <input type="text"
-       name="familiya" id="familiya"/></br>
+Пол  <select>
+  <option>Муж</option>
+  <option>Жен</option>
+</select></br>
 Возраст  <input type="text"
        name="name" id="name"/></br>  
 Семейное положение  <input type="text"
