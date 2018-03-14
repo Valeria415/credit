@@ -69,7 +69,7 @@ die(print_r($e));
 // Insert data
 isset($_POST["submit"]{
 $sql_insert =
-"INSERT INTO test_tbl1 (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
+"INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
 $stmt->bindValue(1, $familiya);
 $stmt->bindValue(2, $name);
