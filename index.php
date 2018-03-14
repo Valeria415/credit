@@ -78,7 +78,7 @@ $stmt->bindValue(4, $birthday);
 $stmt->bindValue(5, $inn);
 $stmt->bindValue(6, $telefon);
 $stmt->bindValue(7, $adres);
-$stmt->execute();
+$stmt->execute();}
 
 
 $sql_select = "SELECT * FROM client_tbl";
@@ -94,7 +94,6 @@ if(count($registrants) > 0) {
     echo "<th>telefon</th>";
     echo "<th>adres</th></tr>";
     foreach($registrants as $registrant) {
-        echo "123";
         echo "<tr><td>".$registrant['familiya']."</td>";
         echo "<td>".$registrant['name']."</td>";
         echo "<td>".$registrant['otchestvo']."</td>";
@@ -107,7 +106,6 @@ if(count($registrants) > 0) {
    }
      else {
     echo "<h3>Ни один пользователь не зарегистрирован.</h3>";
-}
 }
 
 
