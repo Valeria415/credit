@@ -54,3 +54,28 @@ border: 0 none; }
 name="submit" value="Далее"/>
 </body>
 </html>
+
+<?php
+try 
+{
+$conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) 
+  {
+print("Error connecting to SQL Server.");
+die(print_r($e));
+  }
+// Insert data
+$sql_insert =
+"INSERT INTO test_tbl1 (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
+$stmt = $conn->prepare($sql_insert);
+$stmt->bindValue(1, $familiya);
+$stmt->bindValue(2, $name);
+$stmt->bindValue(3, $otchestvo);
+$stmt->bindValue(4, $birthday);
+$stmt->bindValue(5, $inn);
+$stmt->bindValue(6, $telefon);
+$stmt->bindValue(7, $adres);
+$stmt->execute();
+?>
