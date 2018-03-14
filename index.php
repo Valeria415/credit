@@ -94,6 +94,7 @@ if(count($registrants) > 0) {
     echo "<th>telefon</th>";
     echo "<th>adres</th></tr>";
     foreach($registrants as $registrant) {
+        echo "123";
         echo "<tr><td>".$registrant['familiya']."</td>";
         echo "<td>".$registrant['name']."</td>";
         echo "<td>".$registrant['otchestvo']."</td>";
