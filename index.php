@@ -68,6 +68,8 @@ die(print_r($e));
   }
 
 if(isset($_POST["submit"])) {
+    if($_POST["name"] =="" || $_POST["password"]=="" || $_POST["Email"] ==""){echo "Введите логин, пароль и Email";}
+    else{
     try {
 $familiya = $_POST['familiya'];
 $name = $_POST['name'];
@@ -93,7 +95,7 @@ catch(Exception $e)
 {
 die(var_dump($e));
 }
-
+}
 $sql_select = "SELECT * FROM client_tbl";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll();
