@@ -66,7 +66,7 @@ catch (PDOException $e)
 print("Error connecting to SQL Server.");
 die(print_r($e));
   }
-// Insert data
+
 if(isset($_POST["submit"])) {
     try {
 $familiya = $_POST['familiya'];
@@ -77,6 +77,7 @@ $inn = $_POST['inn'];
 $telefon = $_POST['telefon'];
 $adres = $_POST['adres'];
         
+// Insert data 
 $sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
 $stmt->bindValue(1, $familiya);
@@ -86,8 +87,12 @@ $stmt->bindValue(4, $birthday);
 $stmt->bindValue(5, $inn);
 $stmt->bindValue(6, $telefon);
 $stmt->bindValue(7, $adres);
-$stmt->execute();}
-
+$stmt->execute();
+}
+catch(Exception $e) 
+{
+die(var_dump($e));
+}
 
 $sql_select = "SELECT * FROM client_tbl";
 $stmt = $conn->query($sql_select);
