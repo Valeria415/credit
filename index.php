@@ -68,13 +68,13 @@ die(print_r($e));
   }
 
 if(isset($_POST["submit"])) {
-    if($_POST["name"] =="" || $_POST["password"]=="" || $_POST["Email"] ==""){echo "Введите логин, пароль и Email";}
+    if($_POST["familiya"] =="" || $_POST["name"]=="" || $_POST["otchestvo"] ==""){echo "Введите свои данные";}
     else{
     try {
 $familiya = $_POST['familiya'];
 $name = $_POST['name'];
 $otchestvo = $_POST['otchestvo'];
-$birthday = date("Y-m-d");
+$birthday = date("birthday");
 $inn = $_POST['inn'];
 $telefon = $_POST['telefon'];
 $adres = $_POST['adres'];
@@ -94,6 +94,7 @@ $stmt->execute();
 catch(Exception $e) 
 {
 die(var_dump($e));
+}
 }
 }
 $sql_select = "SELECT * FROM client_tbl";
