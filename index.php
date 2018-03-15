@@ -69,10 +69,13 @@ die(print_r($e));
 // Insert data
 if(isset($_POST["submit"])) {
     try {
+$familiya = $_POST['familiya'];
 $name = $_POST['name'];
-$email = $_POST['Email'];
-$date = date("Y-m-d");
-$password = $_POST['password'];
+$otchestvo = $_POST['otchestvo'];
+$birthday = date("Y-m-d");
+$inn = $_POST['inn'];
+$telefon = $_POST['telefon'];
+$adres = $_POST['adres'];
         
 $sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
