@@ -32,7 +32,7 @@ border: 0 none; }
        name="name" id="name"/></br>  
 Отчество  <input type="text"
        name="otchestvo" id="otchestvo"/></br>
-Дата рождения <input type="text"
+Дата рождения <input type="date"
        name="birthday" id="birthday"/></br>  
 ИНН  <input type="text"
        name="inn" id="inn"/></br>  
@@ -74,7 +74,7 @@ if(isset($_POST["submit"])) {
 $familiya = $_POST['familiya'];
 $name = $_POST['name'];
 $otchestvo = $_POST['otchestvo'];
-$birthday = date("Y-m-g");
+$birthday = date("z-F-Y");
 $inn = $_POST['inn'];
 $telefon = $_POST['telefon'];
 $adres = $_POST['adres'];
