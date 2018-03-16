@@ -74,7 +74,7 @@ if(isset($_POST["submit"])) {
 $familiya = $_POST['familiya'];
 $name = $_POST['name'];
 $otchestvo = $_POST['otchestvo'];
-$birthday = date("Y-m-g");
+$birthday = date("Y-m-z");
 $inn = $_POST['inn'];
 $telefon = $_POST['telefon'];
 $adres = $_POST['adres'];
