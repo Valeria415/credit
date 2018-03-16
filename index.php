@@ -32,8 +32,8 @@ border: 0 none; }
        name="name" id="name"/></br>  
 Отчество  <input type="text"
        name="otchestvo" id="otchestvo"/></br>
-Дата рождения <input type="date"
-       name="birthday" id="birthday"/></br>  
+Дата рождения <input type="datetime"
+       name="birthday"/></br>  
 ИНН  <input type="text"
        name="inn" id="inn"/></br>  
 Номер телефона <input type="text"
