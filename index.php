@@ -46,7 +46,7 @@ border: 0 none; }
        name="nomerp" id="nomerp"/></br>  
 Кем выдан  <input type="text"
        name="kem" id="kem"/></br>  
-Дата выдачи  <input type="data"
+Дата выдачи  <input type="text" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"
        name="data" id="data"/></br>  
 Код подразделения  <input type="text"
        name="kodp" id="kodp"/></br>
