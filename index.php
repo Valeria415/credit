@@ -46,7 +46,7 @@ border: 0 none; }
        name="nomerp" id="nomerp"/></br>  
 Кем выдан  <input type="text"
        name="kem" id="kem"/></br>  
-Дата выдачи  <input type="date"
+Дата выдачи  <input type="data"
        name="data" id="data"/></br>  
 Код подразделения  <input type="text"
        name="kodp" id="kodp"/></br>
