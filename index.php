@@ -68,7 +68,7 @@ die(print_r($e));
   }
 
 if(isset($_POST["submit"])) {
-    if($_POST["familiya"] =="" || $_POST["name"]=="" || $_POST["otchestvo"] ==""){echo "Введите свои данные";}
+    if($_POST["familiya"] ==""){echo "Введите свои данные";}
     else{
     try {
 $familiya = $_POST['familiya'];
@@ -78,9 +78,14 @@ $birthday = $_POST['birthday'];
 $inn = $_POST['inn'];
 $telefon = $_POST['telefon'];
 $adres = $_POST['adres'];
+$seria = $_POST['seria'];
+$nomerp = $_POST['nomerp'];
+$kem = $_POST['kem'];
+$data = $_POST['data'];
+$kodp = $_POST['kodp'];
         
 // Insert data 
-$sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres) VALUES (?,?,?,?,?,?,?)";
+$sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
 $stmt->bindValue(1, $familiya);
 $stmt->bindValue(2, $name);
@@ -89,6 +94,11 @@ $stmt->bindValue(4, $birthday);
 $stmt->bindValue(5, $inn);
 $stmt->bindValue(6, $telefon);
 $stmt->bindValue(7, $adres);
+$stmt->bindValue(8, $seria);
+$stmt->bindValue(9, $nomerp);
+$stmt->bindValue(10, $kem);
+$stmt->bindValue(11, $data);
+$stmt->bindValue(12, $kodp);
 $stmt->execute();
 }
 catch(Exception $e) 
