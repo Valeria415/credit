@@ -32,7 +32,7 @@ border: 0 none; }
        name="name" id="name"/></br>  
 Отчество  <input type="text"
        name="otchestvo" id="otchestvo"/></br>
-Дата рождения <input type="date" pattern="[0-9]{4}.[0-9]{2}.[0-9]{2}"
+Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"
        name="birthday"/></br>  
 ИНН  <input type="text"
        name="inn" id="inn"/></br>  
