@@ -2,7 +2,7 @@
 try {
     $conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE TABLE client_tbl(
+    $sql = "CREATE TABLE klient_tbl(
     id INT NOT NULL IDENTITY(1,1) 
     PRIMARY KEY(id),
     familiya VARCHAR(30),
@@ -11,7 +11,12 @@ try {
     birthday DATE,
     inn VARCHAR(30),
     telefon VARCHAR(30),
-    adres VARCHAR(30)
+    adres VARCHAR(30),
+    seria VARCHAR(30),
+    nomerp VARCHAR(30),
+    kem VARCHAR(30),
+    data DATE,
+    kodp VARCHAR(30)
     )";
    
     $conn->query($sql);
