@@ -68,6 +68,29 @@ die(print_r($e));
   }
 
 if(isset($_POST["submit"])) {
+    if ($stmt->fetchColumn() > 0){
+foreach ($n as $row) {
+session_start();
+$_SESSION['familiya'] = $row["familiya"];
+$_SESSION['name'] = $row["name"];
+$_SESSION['otchestvo'] = $row["otchestvo"];
+$_SESSION['birthday'] = $row["birthday"];
+$_SESSION['inn'] = $row["inn"];
+$_SESSION['telefon'] = $row["telefon"];
+$_SESSION['adres'] = $row["adres"];
+$_SESSION['seria'] = $row["seria"];
+$_SESSION['nomerp'] = $row["nomerp"];
+$_SESSION['kem'] = $row["kem"];
+$_SESSION['data'] = $row["data"];
+$_SESSION['kodp'] = $row["kodp"];
+$_SESSION['id'] = $row["id"]
+    
+    header('location: anketa.php');
+}
+}
+}
+    
+    
     if($_POST["familiya"] ==""){echo "Введите свои данные";}
     else{
     try {
@@ -107,32 +130,5 @@ die(var_dump($e));
 }
 }
 }
-$sql_select = "SELECT * FROM klient_tbl";
-$stmt = $conn->query($sql_select);
-$registrants = $stmt->fetchAll();
-if(count($registrants) > 0) {
-    echo "<table>";
-    echo "<tr><th>familiya</th>";
-    echo "<th>name</th>";
-    echo "<th>otchestvo</th>";
-    echo "<th>birthday</th>";
-    echo "<th>inn</th>";
-    echo "<th>telefon</th>";
-    echo "<th>adres</th></tr>";
-    foreach($registrants as $registrant) {
-        echo "<tr><td>".$registrant['familiya']."</td>";
-        echo "<td>".$registrant['name']."</td>";
-        echo "<td>".$registrant['otchestvo']."</td>";
-         echo "<td>".$registrant['birthday']."</td>";
-        echo "<td>".$registrant['inn']."</td>";
-         echo "<td>".$registrant['telefon']."</td>";
-        echo "<td>".$registrant['adres']."</td></tr>";
-    }
-    echo "</table>";
-   }
-     else {
-    echo "<h3>Ни один пользователь не зарегистрирован.</h3>";
-}
-
 
 ?>
