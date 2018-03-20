@@ -90,7 +90,7 @@ name="hom" id="hom"/></br>
 Начальный капитал <input type="text"
 name="nachkap" id="name"/></br>
 Привлекались ли Вы к уголовной ответственности?
-<input type="checkbox" name="nepcredit" value="p1"> да</br>
+<input type="checkbox" name="ugot" value="p1"> да</br>
 <input type="submit"
 name="submit" value="Результат"/>
 </body>
