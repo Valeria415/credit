@@ -85,7 +85,7 @@ $data = $_POST['data'];
 $kodp = $_POST['kodp'];
         
 // Insert data 
-$sql_insert = "INSERT INTO client_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+$sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql_insert);
 $stmt->bindValue(1, $familiya);
 $stmt->bindValue(2, $name);
@@ -107,7 +107,7 @@ die(var_dump($e));
 }
 }
 }
-$sql_select = "SELECT * FROM client_tbl";
+$sql_select = "SELECT * FROM klient_tbl";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll();
 if(count($registrants) > 0) {
