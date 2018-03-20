@@ -31,61 +31,61 @@ border: 0 none; }
   <option value ="Woman">Жен</option>
 </select></br>
 Возраст <select name="age">
-  <option value ="">20-30 лет</option>
-  <option value ="">31-45 лет</option>
-  <option value ="">46-60 лет </option>
+  <option value ="a1">20-30 лет</option>
+  <option value ="a2">31-45 лет</option>
+  <option value ="a3">46-60 лет </option>
 </select></br>  
 Семейное положение <select name="sp">
-  <option value ="">женат (замужем)</option>
-  <option value ="">холост (не замужем)</option>
-  <option value ="">разведен(а)</option>
-  <option value ="">вдовец(ва)</option>
+  <option value ="b1">женат (замужем)</option>
+  <option value ="b2">холост (не замужем)</option>
+  <option value ="b3">разведен(а)</option>
+  <option value ="b4">вдовец(ва)</option>
 </select></br>
 Иждевенцы <input type="checkbox" name="ij" value="d1">есть<br/>
 Образование <select name="educat">
-  <option value ="e">среднее</option>
-  <option value ="">техническое</option>
-  <option value ="">высшее</option>
+  <option value ="c1">среднее</option>
+  <option value ="c2">техническое</option>
+  <option value ="c3">высшее</option>
 </select></br>
 Работа <select name="work">
-  <option value ="f">собственное дело</option>
-  <option value ="">работа по найму</option>
-  <option value ="">работа в бюджетной сфере</option>
+  <option value ="f1">собственное дело</option>
+  <option value ="f2">работа по найму</option>
+  <option value ="f3">работа в бюджетной сфере</option>
 </select></br> 
 Должность <select name="dolj">
-  <option value ="g">топ-менеджер</option>
-  <option value ="">руководитель </option>
-  <option value ="">служащий</option>
+  <option value ="g1">топ-менеджер</option>
+  <option value ="g2">руководитель </option>
+  <option value ="g3">служащий</option>
 </select></br>
 Среднемесячный доход <select name="sel">
-  <option value ="h">до $1000</option>
-  <option value ="">$1000 - 2000</option>
-  <option value ="">$2000 - 3000</option>
-  <option value ="">больше $3000</option>
+  <option value ="h1">до $1000</option>
+  <option value ="h2">$1000 - 2000</option>
+  <option value ="h3">$2000 - 3000</option>
+  <option value ="h4">больше $3000</option>
 </select></br>
 Прочие источники дохода <select name="prsel">
-  <option value ="k">ценные бумаги</option>
-  <option value ="">вклады </option>
-  <option value ="">прочие доходы</option>
-  <option value ="">нет</option>
+  <option value ="k1">ценные бумаги</option>
+  <option value ="k2">вклады </option>
+  <option value ="k3">прочие доходы</option>
+  <option value ="k4">нет</option>
 </select></br>
 Кредитовались ли вы ранее
 <input type="checkbox" name="credit" value="l1"> да </br>
 Имеются ли непогашенные кредиты
 <input type="checkbox" name="nepcredit" value="m1"> да</br>
 Наличие собственности <select name="prop">
-  <option value ="">квартира</option>
-  <option value ="">дом, дача</option>
-  <option value ="">автомобиль</option>
-  <option value ="">нет</option>
+  <option value ="n1">квартира</option>
+  <option value ="n2">дом, дача</option>
+  <option value ="n3">автомобиль</option>
+  <option value ="n4">нет</option>
 </select></br> 
 Стоимость приобретаемой квартиры <input type="text"
 name="hom" id="hom"/></br>
 Срок кредита  <select name="srok">
-  <option value ="">1-3 года</option>
-  <option value ="">4-6 лет</option>
-  <option value ="">7-10 лет</option>
-  <option value ="">11-15 лет</option>
+  <option value ="o1">1-3 года</option>
+  <option value ="o2">4-6 лет</option>
+  <option value ="o3">7-10 лет</option>
+  <option value ="o4">11-15 лет</option>
 </select></br>
 Начальный капитал <input type="text"
 name="nachkap" id="name"/></br>
