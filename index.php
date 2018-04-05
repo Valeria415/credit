@@ -93,7 +93,7 @@ $_SESSION['id'] = $row["id"]
     
     if($_POST["familiya"] ==""){echo "Введите свои данные";}
     else{
-    try {
+
 $familiya = $_POST['familiya'];
 $name = $_POST['name'];
 $otchestvo = $_POST['otchestvo'];
@@ -123,12 +123,6 @@ $stmt->bindValue(10, $kem);
 $stmt->bindValue(11, $data);
 $stmt->bindValue(12, $kodp);
 $stmt->execute();
-}
-catch(Exception $e) 
-{
-die(var_dump($e));
-}
-}
 }
 
 ?>
