@@ -71,6 +71,7 @@ if(isset($_POST["submit"])) {
     if ($stmt->fetchColumn() > 0){
 foreach ($n as $row) {
 session_start();
+    
 $_SESSION['familiya'] = $row["familiya"];
 $_SESSION['name'] = $row["name"];
 $_SESSION['otchestvo'] = $row["otchestvo"];
@@ -90,25 +91,6 @@ $_SESSION['id'] = $row["id"]
 }
 }
     
-    
-
-        
-// Insert data 
-$sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-$stmt = $conn->prepare($sql_insert);
-$stmt->bindValue(1, $familiya);
-$stmt->bindValue(2, $name);
-$stmt->bindValue(3, $otchestvo);
-$stmt->bindValue(4, $birthday);
-$stmt->bindValue(5, $inn);
-$stmt->bindValue(6, $telefon);
-$stmt->bindValue(7, $adres);
-$stmt->bindValue(8, $seria);
-$stmt->bindValue(9, $nomerp);
-$stmt->bindValue(10, $kem);
-$stmt->bindValue(11, $data);
-$stmt->bindValue(12, $kodp);
-$stmt->execute();
 
 
 ?>
