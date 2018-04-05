@@ -91,21 +91,7 @@ $_SESSION['id'] = $row["id"]
 }
     
     
-    if($_POST["familiya"] ==""){echo "Введите свои данные";}
-    else{
 
-$familiya = $_POST['familiya'];
-$name = $_POST['name'];
-$otchestvo = $_POST['otchestvo'];
-$birthday = $_POST['birthday'];
-$inn = $_POST['inn'];
-$telefon = $_POST['telefon'];
-$adres = $_POST['adres'];
-$seria = $_POST['seria'];
-$nomerp = $_POST['nomerp'];
-$kem = $_POST['kem'];
-$data = $_POST['data'];
-$kodp = $_POST['kodp'];
         
 // Insert data 
 $sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -123,6 +109,6 @@ $stmt->bindValue(10, $kem);
 $stmt->bindValue(11, $data);
 $stmt->bindValue(12, $kodp);
 $stmt->execute();
-}
+
 
 ?>
