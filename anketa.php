@@ -101,5 +101,23 @@ try
 {
 $conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+   $familiya = $_SESSION['familiya'];
+ $name = $_POST['name'];
+ $otchestvo = $_POST['otchestvo'];
+ $birthday = $_POST['birthday'];
+ $inn = $_POST['inn'];
+ $telefon = $_POST['telefon'];
+ $adres = $_POST['adres'];
+ $seria = $_POST['seria'];
+ $nomerp = $_POST['nomerp'];
+ $kem = $_POST['kem'];
+ $data = $_POST['data'];
+$kodp = $_POST['kodp'];
+    
+    
+    
+    
+    
 }
 ?>
