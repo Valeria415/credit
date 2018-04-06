@@ -101,19 +101,79 @@ try
 {
 $conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    catch (PDOException $e) 
+  {
+print("Error connecting to SQL Server.");
+die(print_r($e));
+  }
 
-   $familiya = $_SESSION['familiya'];
- $name = $_POST['name'];
- $otchestvo = $_POST['otchestvo'];
- $birthday = $_POST['birthday'];
- $inn = $_POST['inn'];
- $telefon = $_POST['telefon'];
- $adres = $_POST['adres'];
- $seria = $_POST['seria'];
- $nomerp = $_POST['nomerp'];
- $kem = $_POST['kem'];
- $data = $_POST['data'];
-$kodp = $_POST['kodp'];
+ $familiya = $_SESSION['familiya'];
+ $name = $_SESSION['name'];
+ $otchestvo = $_SESSION['otchestvo'];
+ $birthday = $_SESSION['birthday'];
+ $inn = $_SESSION['inn'];
+ $telefon = $_SESSION['telefon'];
+ $adres = $_SESSION['adres'];
+ $seria = $_SESSION['seria'];
+ $nomerp = $_SESSION['nomerp'];
+ $kem = $_SESSION['kem'];
+ $data = $_SESSION['data'];
+ $kodp = $_SESSION['kodp'];
+ 
+ $pol = $_POST['pol'];
+ $age = $_POST['age'];
+ $sp = $_POST['sp'];
+ $ij = $_POST['ij'];
+ $educat = $_POST['educat'];
+ $work = $_POST['work'];
+ $dolj = $_POST['dolj'];
+ $sel = $_POST['sel'];
+ $prsel = $_POST['prsel'];
+ $credit = $_POST['credit'];
+ $nepcredit = $_POST['nepcredit'];
+ $prop = $_POST['prop'];
+ $hom = $_POST['hom'];
+ $srok = $_POST['srok'];
+ $nachkap = $_POST['nachkap'];
+ $ugot = $_POST['ugot'];
+    
+   // Insert data   
+  $sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp,pol,age,sp,ij,educat,work,dolj,sel,prsel,credit,nepcredit,prop,hom,srok,nachkap,ugot) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+ $stmt = $conn->prepare($sql_insert);
+ $stmt->bindValue(1, $familiya);
+ $stmt->bindValue(2, $name);
+ $stmt->bindValue(3, $otchestvo);
+ $stmt->bindValue(4, $birthday);
+ $stmt->bindValue(5, $inn);
+ $stmt->bindValue(6, $telefon);
+ $stmt->bindValue(7, $adres);
+ $stmt->bindValue(8, $seria);
+ $stmt->bindValue(9, $nomerp);
+ $stmt->bindValue(10, $kem);
+ $stmt->bindValue(11, $data);
+ $stmt->bindValue(12, $kodp);
+ $stmt->bindValue(13, $pol);
+ $stmt->bindValue(14, $age);
+ $stmt->bindValue(15, $sp);
+ $stmt->bindValue(16, $ij);
+ $stmt->bindValue(17, $educat);
+ $stmt->bindValue(18, $work);
+ $stmt->bindValue(19, $dolj);
+ $stmt->bindValue(20, $sel);
+ $stmt->bindValue(21, $prsel);
+ $stmt->bindValue(22, $credit);
+ $stmt->bindValue(23, $nepcredit);
+ $stmt->bindValue(24, $prop);
+ $stmt->bindValue(25, $hom);
+ $stmt->bindValue(26, $srok);
+ $stmt->bindValue(27, $nachkap);
+ $stmt->bindValue(28, $ugot);
+ $stmt->execute();
+ }
+-catch(Exception $e) 
+-{
+-die(var_dump($e));
+-}
     
     
     
