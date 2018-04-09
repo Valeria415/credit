@@ -1,6 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-<Title>Ипотека</Title>
+  <meta charset="utf-8"><Title>Ипотека</Title>
 <style type="text/css">
     body { background-color:
  #fff; border-top: solid 10px #000;
@@ -24,9 +25,9 @@ border: 0 none; }
 <body>
 <h1>Оформление ипотеки</h1>
 <p>Заполните анкету.</p>
-<form method="post" action="index.php"
-      enctype="multipart/form-data" >
+<form method="post" action="anketa.php">
 Пол <select name="pol">
+  <option value=""></option>
   <option value ="Man">Муж</option>
   <option value ="Woman">Жен</option>
 </select></br>
@@ -34,7 +35,7 @@ border: 0 none; }
   <option value ="a1">20-30 лет</option>
   <option value ="a2">31-45 лет</option>
   <option value ="a3">46-60 лет </option>
-</select></br>  
+</select></br>
 Семейное положение <select name="sp">
   <option value ="b1">женат (замужем)</option>
   <option value ="b2">холост (не замужем)</option>
@@ -51,7 +52,7 @@ border: 0 none; }
   <option value ="f1">собственное дело</option>
   <option value ="f2">работа по найму</option>
   <option value ="f3">работа в бюджетной сфере</option>
-</select></br> 
+</select></br>
 Должность <select name="dolj">
   <option value ="g1">топ-менеджер</option>
   <option value ="g2">руководитель </option>
@@ -78,7 +79,7 @@ border: 0 none; }
   <option value ="n2">дом, дача</option>
   <option value ="n3">автомобиль</option>
   <option value ="n4">нет</option>
-</select></br> 
+</select></br>
 Стоимость приобретаемой квартиры <input type="text"
 name="hom" id="hom"/></br>
 Срок кредита  <select name="srok">
@@ -87,39 +88,43 @@ name="hom" id="hom"/></br>
   <option value ="o3">7-10 лет</option>
   <option value ="o4">11-15 лет</option>
 </select></br>
-Начальный капитал <input type="text"
-name="nachkap" id="name"/></br>
+Начальный капитал <input type="text" name="nachkap" id="name"/></br>
 Привлекались ли Вы к уголовной ответственности?
 <input type="checkbox" name="ugot" value="p1"> да</br>
-<input type="submit"
-name="submit" value="Результат"/>
+<input type="submit" name="submit" value="Результат"/>
+</form>
 </body>
 </html>
 
 <?php
-try 
+try
 {
-$conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    catch (PDOException $e) 
-  {
-print("Error connecting to SQL Server.");
-die(print_r($e));
-  }
+  $conn = new PDO("mysql:host=localhost;dbname=Progr", "root", "");
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+  print("Error connecting to SQL Server.");
+  die(print_r($e));
+}
 
- $familiya = $_SESSION['familiya'];
- $name = $_SESSION['name'];
- $otchestvo = $_SESSION['otchestvo'];
- $birthday = $_SESSION['birthday'];
- $inn = $_SESSION['inn'];
- $telefon = $_SESSION['telefon'];
- $adres = $_SESSION['adres'];
- $seria = $_SESSION['seria'];
- $nomerp = $_SESSION['nomerp'];
- $kem = $_SESSION['kem'];
- $data = $_SESSION['data'];
- $kodp = $_SESSION['kodp'];
- 
+
+
+
+if (isset($_POST['submit'])) {
+
+ $familiya = $_POST['familiya'];
+ $name = $_POST['name'];
+ $otchestvo = $_POST['otchestvo'];
+ $birthday = $_POST['birthday'];
+ $inn = $_POST['inn'];
+ $telefon = $_POST['telefon'];
+ $adres = $_POST['adres'];
+ $seria = $_POST['seria'];
+ $nomerp = $_POST['nomerp'];
+ $kem = $_POST['kem'];
+ $data = $_POST['data'];
+ $kodp = $_POST['kodp'];
+
  $pol = $_POST['pol'];
  $age = $_POST['age'];
  $sp = $_POST['sp'];
@@ -136,9 +141,10 @@ die(print_r($e));
  $srok = $_POST['srok'];
  $nachkap = $_POST['nachkap'];
  $ugot = $_POST['ugot'];
-    
-   // Insert data   
-  $sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp,pol,age,sp,ij,educat,work,dolj,sel,prsel,credit,nepcredit,prop,hom,srok,nachkap,ugot) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+   // Insert data
+  $sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp,pol,age,sp,ij,educat,work,dolj,sel,prsel,credit,nepcredit,prop,hom,srok,nachkap,ugot)
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  $stmt = $conn->prepare($sql_insert);
  $stmt->bindValue(1, $familiya);
  $stmt->bindValue(2, $name);
@@ -169,11 +175,7 @@ die(print_r($e));
  $stmt->bindValue(27, $nachkap);
  $stmt->bindValue(28, $ugot);
  $stmt->execute();
- }
-catch(Exception $e) 
-{
-die(var_dump($e));
+
 }
-    
-   
+
 ?>
