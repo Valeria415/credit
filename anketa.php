@@ -97,16 +97,14 @@ name="hom" id="hom"/></br>
 </html>
 
 <?php
-try
-{
-  $conn = new PDO("mysql:host=localhost;dbname=Progr", "root", "");
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
-  print("Error connecting to SQL Server.");
-  die(print_r($e));
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
 }
-
 
 
 
