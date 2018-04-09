@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
+  <meta charset="utf-8">
 <Title>Ипотека</Title>
 <style type="text/css">
     body { background-color:
@@ -22,78 +24,59 @@ border: 0 none; }
 </style>
 </head>
 <body>
-<h1>Оформление ипотеки</h1>
-<p>Введите свои данные и перейдите по кнопке<strong> "Далее" </strong> .</p>
-<form method="post" action="index.php"
-      enctype="multipart/form-data" >
-Фамилия  <input type="text"
-       name="familiya" id="familiya"/></br>
-Имя  <input type="text"
-       name="name" id="name"/></br>  
-Отчество  <input type="text"
-       name="otchestvo" id="otchestvo"/></br>
-Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"
-       name="birthday"/></br>  
-ИНН  <input type="text"
-       name="inn" id="inn"/></br>  
-Номер телефона <input type="text"
-       name="telefon" id="telefon"/>
-Адрес  <input type="text"
-       name="adres" id="adres"/></br>  
-Серия  <input type="text"
-       name="seria" id="seria"/></br>  
-Номер  <input type="text"
-       name="nomerp" id="nomerp"/></br>  
-Кем выдан  <input type="text"
-       name="kem" id="kem"/></br>  
-Дата выдачи  <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"
-       name="data" id="data"/></br>  
-Код подразделения  <input type="text"
-       name="kodp" id="kodp"/></br>
-<input type="submit"
-name="submit" value="Далее"/>
+    <h1>Оформление ипотеки</h1>
+    <p>Введите свои данные и перейдите по кнопке<strong> "Далее" </strong> .</p>
+<form method="post" action="anketa.php">
+  Фамилия  <input type="text" name="familiya" id="familiya"/></br>
+  Имя  <input type="text" name="name" id="name"/></br>
+  Отчество  <input type="text" name="otchestvo" id="otchestvo"/></br>
+  Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="birthday"/></br>
+  ИНН  <input type="text" name="inn" id="inn"/></br>
+  Номер телефона <input type="text" name="telefon" id="telefon"/>
+  Адрес  <input type="text" name="adres" id="adres"/></br>
+  Серия  <input type="text" name="seria" id="seria"/></br>
+  Номер  <input type="text" name="nomerp" id="nomerp"/></br>
+  Кем выдан  <input type="text" name="kem" id="kem"/></br>
+  Дата выдачи  <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="data" id="data"/></br>
+  Код подразделения  <input type="text" name="kodp" id="kodp"/></br>
+
+  <input type="submit" name="submit" value="Далее"/>
+</form>
 </body>
 </html>
 
 <?php
-try 
-{
-$conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "Hswfhmlyz08");
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+  $conn = new PDO("mysql:host=localhost;dbname=Progr", "root", "");
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
-catch (PDOException $e) 
-  {
-print("Error connecting to SQL Server.");
-die(print_r($e));
-  }
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
 $sql_select = "SELECT * FROM klient_tbl";
 $stmt = $conn->query($sql_select);
 
-if(isset($_POST["submit"])) {
-    if ($stmt->fetchColumn() > 0){
-foreach ($n as $row) {
-session_start();
-    
-$_SESSION['familiya'] = $row["familiya"];
-$_SESSION['name'] = $row["name"];
-$_SESSION['otchestvo'] = $row["otchestvo"];
-$_SESSION['birthday'] = $row["birthday"];
-$_SESSION['inn'] = $row["inn"];
-$_SESSION['telefon'] = $row["telefon"];
-$_SESSION['adres'] = $row["adres"];
-$_SESSION['seria'] = $row["seria"];
-$_SESSION['nomerp'] = $row["nomerp"];
-$_SESSION['kem'] = $row["kem"];
-$_SESSION['data'] = $row["data"];
-$_SESSION['kodp'] = $row["kodp"];
-$_SESSION['id'] = $row["id"]
-    
-    header('location: anketa.php');
-}
-}
-}
-    
+  if(isset($_POST["submit"])) {
+    if ($stmt->fetchColumn() > 0) {
+      foreach ($n as $row) {
+        session_start();
+        $_SESSION['familiya'] = $row["familiya"];
+        $_SESSION['name'] = $row["name"];
+        $_SESSION['otchestvo'] = $row["otchestvo"];
+        $_SESSION['birthday'] = $row["birthday"];
+        $_SESSION['inn'] = $row["inn"];
+        $_SESSION['telefon'] = $row["telefon"];
+        $_SESSION['adres'] = $row["adres"];
+        $_SESSION['seria'] = $row["seria"];
+        $_SESSION['nomerp'] = $row["nomerp"];
+        $_SESSION['kem'] = $row["kem"];
+        $_SESSION['data'] = $row["data"];
+        $_SESSION['kodp'] = $row["kodp"];
+        $_SESSION['id'] = $row["id"];
 
-
+      }
+    }
+  }
 ?>
