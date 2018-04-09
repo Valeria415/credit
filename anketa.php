@@ -27,60 +27,60 @@ border: 0 none; }
 <p>Заполните анкету.</p>
 <form method="post" action="anketa.php">
 Пол <select name="pol">
-  <option value ="Man">Муж</option>
-  <option value ="Woman">Жен</option>
+  <option value ="0">Муж</option>
+  <option value ="1">Жен</option>
 </select></br>
 Возраст <select name="age">
-  <option value ="a1">20-30 лет</option>
-  <option value ="a2">31-45 лет</option>
-  <option value ="a3">46-60 лет </option>
+  <option value ="1">20-30 лет</option>
+  <option value ="2">31-45 лет</option>
+  <option value ="1">46-60 лет </option>
 </select></br>
 Семейное положение <select name="sp">
-  <option value ="b1">женат (замужем)</option>
-  <option value ="b2">холост (не замужем)</option>
-  <option value ="b3">разведен(а)</option>
-  <option value ="b4">вдовец(ва)</option>
+  <option value ="1">женат (замужем)</option>
+  <option value ="1">холост (не замужем)</option>
+  <option value ="0">разведен(а)</option>
+  <option value ="0">вдовец(ва)</option>
 </select></br>
 Образование <select name="educat">
-  <option value ="c1">среднее</option>
-  <option value ="c2">техническое</option>
-  <option value ="c3">высшее</option>
+  <option value ="0">среднее</option>
+  <option value ="1">техническое</option>
+  <option value ="2">высшее</option>
 </select></br>
 Работа <select name="work">
-  <option value ="f1">собственное дело</option>
-  <option value ="f2">работа по найму</option>
-  <option value ="f3">работа в бюджетной сфере</option>
+  <option value ="0">собственное дело</option>
+  <option value ="2">работа по найму</option>
+  <option value ="1">работа в бюджетной сфере</option>
 </select></br>
 Должность <select name="dolj">
-  <option value ="g1">топ-менеджер</option>
-  <option value ="g2">руководитель </option>
-  <option value ="g3">служащий</option>
+  <option value ="3">топ-менеджер</option>
+  <option value ="2">руководитель </option>
+  <option value ="1">служащий</option>
 </select></br>
 Среднемесячный доход <select name="sel">
-  <option value ="h1">до $1000</option>
-  <option value ="h2">$1000 - 2000</option>
-  <option value ="h3">$2000 - 3000</option>
-  <option value ="h4">больше $3000</option>
+  <option value ="0">до $1000</option>
+  <option value ="3">$1000 - 2000</option>
+  <option value ="5">$2000 - 3000</option>
+  <option value ="6">больше $3000</option>
 </select></br>
 Прочие источники дохода <select name="prsel">
-  <option value ="k1">ценные бумаги</option>
-  <option value ="k2">вклады </option>
-  <option value ="k3">прочие доходы</option>
-  <option value ="k4">нет</option>
+  <option value ="3">ценные бумаги</option>
+  <option value ="2">вклады </option>
+  <option value ="1">прочие доходы</option>
+  <option value ="0">нет</option>
 </select></br>
 Наличие собственности <select name="prop">
-  <option value ="n1">квартира</option>
-  <option value ="n2">дом, дача</option>
-  <option value ="n3">автомобиль</option>
-  <option value ="n4">нет</option>
+  <option value ="3">квартира</option>
+  <option value ="2">дом, дача</option>
+  <option value ="2">автомобиль</option>
+  <option value ="0">нет</option>
 </select></br>
 Стоимость приобретаемой квартиры <input type="text"
 name="hom" id="hom"/></br>
 Срок кредита  <select name="srok">
-  <option value ="o1">1-3 года</option>
-  <option value ="o2">4-6 лет</option>
-  <option value ="o3">7-10 лет</option>
-  <option value ="o4">11-15 лет</option>
+  <option value ="4">1-3 года</option>
+  <option value ="2">4-6 лет</option>
+  <option value ="3">7-10 лет</option>
+  <option value ="1">11-15 лет</option>
 </select></br>
 Начальный капитал <input type="text" name="nachkap" id="name"/></br>
 <input type="submit" name="submit" value="Результат"/>
@@ -114,7 +114,6 @@ if (isset($_POST['submit'])) {
  $kem = $_POST['kem'];
  $data = $_POST['data'];
  $kodp = $_POST['kodp'];
-
  $pol = $_POST['pol'];
  $age = $_POST['age'];
  $sp = $_POST['sp'];
@@ -158,6 +157,22 @@ if (isset($_POST['submit'])) {
  $stmt->bindValue(24, $nachkap);
  $stmt->execute();
 
+ $a = (int) $_POST['pol']; 
+ $b = (int) $_POST['age']; 
+ $c = (int) $_POST['sp']; 
+ $d = (int) $_POST['educat']; 
+ $e = (int) $_POST['work']; 
+ $f = (int) $_POST['dolj']; 
+ $g = (int) $_POST['sel']; 
+ $p = (int) $_POST['prsel']; 
+ $m = (int) $_POST['prop']; 
+ $n = (int) $_POST['srok']; 
+ $x1 = ($a+$b+$c+$d+$e); 
+ $x2 = ($f+$g+$p);
+ $z= ($x1*0.15+$x2*0.3+$m*0.25);
+
+echo "$z"; 
+} 
 }
 
 ?>
