@@ -20,19 +20,19 @@ try {
     pol INT,
     age INT,
     sp INT,
-    ij BOOLEAN,
+    ij BOOL,
     educat INT,
     work INT,
     dolj INT,
     sel INT,
     prsel INT,
-    credit BOOLEAN,
-    nepcredit BOOLEAN,
+    credit BOOL,
+    nepcredit BOOL,
     prop INT,
     hom VARCHAR(30),
     srok INT,
     nachkap VARCHAR(30),
-    ugot BOOLEAN
+    ugot BOOL
     )";
    
     $conn->query($sql);
