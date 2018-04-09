@@ -36,6 +36,7 @@ try {
     )";
    
     $conn->query($sql);
+    echo "<h3>Таблица создана!</h3>";
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
