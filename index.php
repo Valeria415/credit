@@ -47,14 +47,13 @@ border: 0 none; }
 
 <?php
 try {
-  $conn = new PDO("mysql:host=localhost;dbname=Progr", "root", "");
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new PDO("sqlsrv:server = tcp:pinyasova.database.windows.net,1433; Database = Progr", "Valera", "hswfhmlyz08");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
-
 $sql_select = "SELECT * FROM klient_tbl";
 $stmt = $conn->query($sql_select);
 
