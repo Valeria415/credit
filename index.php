@@ -67,6 +67,9 @@ print("Error connecting to SQL Server.");
 die(print_r($e));
   }
 
+$sql_select = "SELECT * FROM klient_tbl";
+$stmt = $conn->query($sql_select);
+
 if(isset($_POST["submit"])) {
     if ($stmt->fetchColumn() > 0){
 foreach ($n as $row) {
