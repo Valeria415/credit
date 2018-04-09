@@ -27,7 +27,6 @@ border: 0 none; }
 <p>Заполните анкету.</p>
 <form method="post" action="anketa.php">
 Пол <select name="pol">
-  <option value=""></option>
   <option value ="Man">Муж</option>
   <option value ="Woman">Жен</option>
 </select></br>
@@ -42,7 +41,6 @@ border: 0 none; }
   <option value ="b3">разведен(а)</option>
   <option value ="b4">вдовец(ва)</option>
 </select></br>
-Иждевенцы <input type="checkbox" name="ij" value="d1">есть<br/>
 Образование <select name="educat">
   <option value ="c1">среднее</option>
   <option value ="c2">техническое</option>
@@ -70,10 +68,6 @@ border: 0 none; }
   <option value ="k3">прочие доходы</option>
   <option value ="k4">нет</option>
 </select></br>
-Кредитовались ли вы ранее
-<input type="checkbox" name="credit" value="l1"> да </br>
-Имеются ли непогашенные кредиты
-<input type="checkbox" name="nepcredit" value="m1"> да</br>
 Наличие собственности <select name="prop">
   <option value ="n1">квартира</option>
   <option value ="n2">дом, дача</option>
@@ -89,8 +83,6 @@ name="hom" id="hom"/></br>
   <option value ="o4">11-15 лет</option>
 </select></br>
 Начальный капитал <input type="text" name="nachkap" id="name"/></br>
-Привлекались ли Вы к уголовной ответственности?
-<input type="checkbox" name="ugot" value="p1"> да</br>
 <input type="submit" name="submit" value="Результат"/>
 </form>
 </body>
@@ -126,23 +118,19 @@ if (isset($_POST['submit'])) {
  $pol = $_POST['pol'];
  $age = $_POST['age'];
  $sp = $_POST['sp'];
- $ij = $_POST['ij'];
  $educat = $_POST['educat'];
  $work = $_POST['work'];
  $dolj = $_POST['dolj'];
  $sel = $_POST['sel'];
  $prsel = $_POST['prsel'];
- $credit = $_POST['credit'];
- $nepcredit = $_POST['nepcredit'];
  $prop = $_POST['prop'];
  $hom = $_POST['hom'];
  $srok = $_POST['srok'];
  $nachkap = $_POST['nachkap'];
- $ugot = $_POST['ugot'];
 
    // Insert data
-  $sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp,pol,age,sp,ij,educat,work,dolj,sel,prsel,credit,nepcredit,prop,hom,srok,nachkap,ugot)
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+  $sql_insert = "INSERT INTO klient_tbl (familiya,name,otchestvo, birthday, inn, telefon,adres, seria,nomerp,kem,data,kodp,pol,age,sp,educat,work,dolj,sel,prsel,prop,hom,srok,nachkap)
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  $stmt = $conn->prepare($sql_insert);
  $stmt->bindValue(1, $familiya);
  $stmt->bindValue(2, $name);
@@ -159,19 +147,15 @@ if (isset($_POST['submit'])) {
  $stmt->bindValue(13, $pol);
  $stmt->bindValue(14, $age);
  $stmt->bindValue(15, $sp);
- $stmt->bindValue(16, $ij);
- $stmt->bindValue(17, $educat);
- $stmt->bindValue(18, $work);
- $stmt->bindValue(19, $dolj);
- $stmt->bindValue(20, $sel);
- $stmt->bindValue(21, $prsel);
- $stmt->bindValue(22, $credit);
- $stmt->bindValue(23, $nepcredit);
- $stmt->bindValue(24, $prop);
- $stmt->bindValue(25, $hom);
- $stmt->bindValue(26, $srok);
- $stmt->bindValue(27, $nachkap);
- $stmt->bindValue(28, $ugot);
+ $stmt->bindValue(16, $educat);
+ $stmt->bindValue(17, $work);
+ $stmt->bindValue(18, $dolj);
+ $stmt->bindValue(19, $sel);
+ $stmt->bindValue(20, $prsel);
+ $stmt->bindValue(21, $prop);
+ $stmt->bindValue(22, $hom);
+ $stmt->bindValue(23, $srok);
+ $stmt->bindValue(24, $nachkap);
  $stmt->execute();
 
 }
