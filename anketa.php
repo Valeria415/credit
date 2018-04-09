@@ -156,22 +156,38 @@ if (isset($_POST['submit'])) {
  $stmt->bindValue(23, $srok);
  $stmt->bindValue(24, $nachkap);
  $stmt->execute();
-
- $a = (int) $_POST['pol']; 
- $b = (int) $_POST['age']; 
- $c = (int) $_POST['sp']; 
- $d = (int) $_POST['educat']; 
- $e = (int) $_POST['work']; 
- $f = (int) $_POST['dolj']; 
- $g = (int) $_POST['sel']; 
- $p = (int) $_POST['prsel']; 
- $m = (int) $_POST['prop']; 
- $n = (int) $_POST['srok']; 
- $x1 = ($a+$b+$c+$d+$e); 
- $x2 = ($f+$g+$p);
- $z= ($x1*0.15+$x2*0.3+$m*0.25);
-
-echo "$z"; 
+  
+  $sql_select = "SELECT * FROM registration_tbl"; 
+$stmt = $conn->query($sql_select); 
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) { 
+echo "<h2>Заявки</h2>"; 
+echo "<table>"; 
+echo "<th>familiya</th>"; 
+echo "<th>name</th>"; 
+echo "<th>otchestvo</th>"; 
+echo "<th>birthday</th>"; 
+echo "<th>inn</th>"; 
+echo "<th>telefon</th>"; 
+echo "<th>adres</th>"; 
+echo "<th>seria</th>"; 
+echo "<th>nomerp</th>"; 
+foreach($registrants as $registrant) { 
+echo "<tr><td>".$registrant['familiya']."</td>"; 
+echo "<td>".$registrant['name']."</td>"; 
+echo "<td>".$registrant['otchestvo']."</td>"; 
+echo "<td>".$registrant['birthday']."</td>"; 
+echo "<td>".$registrant['inn']."</td>"; 
+echo "<td>".$registrant['telefon']."</td>"; 
+echo "<td>".$registrant['adres']."</td>"; 
+echo "<td>".$registrant['seria']."</td>"; 
+echo "<td>".$registrant['nomerp']."</td>"; 
+} 
+echo "</table>"; 
+} 
+else 
+{ 
+echo "<h3>Ваша заявка не оформлена</h3>";
 } 
 }
 
