@@ -170,10 +170,10 @@ die(print_r($e));
  $stmt->bindValue(28, $ugot);
  $stmt->execute();
  }
--catch(Exception $e) 
--{
--die(var_dump($e));
--}
+catch(Exception $e) 
+{
+die(var_dump($e));
+}
     
    
 ?>
