@@ -172,6 +172,8 @@ echo "<th>telefon</th>";
 echo "<th>adres</th>"; 
 echo "<th>seria</th>"; 
 echo "<th>nomerp</th>"; 
+echo "<th>pol</th>"; 
+echo "<th>age</th>"; 
 foreach($registrants as $registrant) { 
 echo "<tr><td>".$registrant['familiya']."</td>"; 
 echo "<td>".$registrant['name']."</td>"; 
@@ -182,6 +184,8 @@ echo "<td>".$registrant['telefon']."</td>";
 echo "<td>".$registrant['adres']."</td>"; 
 echo "<td>".$registrant['seria']."</td>"; 
 echo "<td>".$registrant['nomerp']."</td>"; 
+echo "<td>".$registrant['pol']."</td>"; 
+echo "<td>".$registrant['age']."</td>"; 
 } 
 echo "</table>"; 
 } 
