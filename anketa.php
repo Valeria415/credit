@@ -23,7 +23,7 @@ border: 0 none; }
 </style>
 </head>
 <body>
-<h1>Оформление ипотеки</h1>
+<h1>Оформление заявки</h1>
 <p>Заполните анкету.</p>
 <form method="post" action="anketa.php">
 Пол <select name="pol">
