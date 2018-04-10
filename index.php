@@ -54,14 +54,14 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 }
+$sql_select = "SELECT * FROM klient_tbl";
+   $stmt = $conn->query($sql_select);
 
 if(isset($_POST["submit"]))
 {
 if($_POST["familiya"] =="" || $_POST["name"]=="" || $_POST["otchestvo"] ==""){echo "Введите логин, пароль и Email";}
 
  else {
-   $sql_select = "SELECT * FROM klient_tbl";
-   $stmt = $conn->query($sql_select);
     if ($stmt->fetchColumn() > 0) {
       foreach ($n as $row) {
         session_start();
