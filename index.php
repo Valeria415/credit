@@ -30,14 +30,14 @@ border: 0 none; }
   Фамилия  <input type="text" name="familiya" id="familiya" required/></br>
   Имя  <input type="text" name="name" id="name" required/></br>
   Отчество  <input type="text" name="otchestvo" id="otchestvo" required/></br>
-  Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="birthday"/></br>
+  Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="birthday" required/></br>
   ИНН  <input type="text" name="inn" id="inn"/></br>
   Номер телефона <input type="text" name="telefon" id="telefon" required/>
   Адрес  <input type="text" name="adres" id="adres" required/></br>
   Серия  <input type="text" name="seria" id="seria" required/></br>
   Номер  <input type="text" name="nomerp" id="nomerp" required/></br>
   Кем выдан  <input type="text" name="kem" id="kem" required/></br>
-  Дата выдачи  <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="data" id="data"/></br>
+  Дата выдачи  <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="data" id="data" required/></br>
   Код подразделения  <input type="text" name="kodp" id="kodp" required/></br>
 
   <input type="submit" name="submit" value="Далее"/>
