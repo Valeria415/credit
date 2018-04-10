@@ -27,18 +27,18 @@ border: 0 none; }
     <h1>Оформление ипотеки</h1>
     <p>Введите свои данные и перейдите по кнопке<strong> "Далее" </strong> .</p>
 <form method="post" action="anketa.php">
-  Фамилия  <input type="text" name="familiya" id="familiya" placeholder="Обязательно поле для заполнения" required/></br>
-  Имя  <input type="text" name="name" id="name"/></br>
-  Отчество  <input type="text" name="otchestvo" id="otchestvo"/></br>
+  Фамилия  <input type="text" name="familiya" id="familiya" placeholder="Обязательно для заполнения" required/></br>
+  Имя  <input type="text" name="name" id="name" placeholder="Обязательно для заполнения" required/></br>
+  Отчество  <input type="text" name="otchestvo" id="otchestvo" placeholder="Обязательно для заполнения" required/></br>
   Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="birthday"/></br>
   ИНН  <input type="text" name="inn" id="inn"/></br>
-  Номер телефона <input type="text" name="telefon" id="telefon"/>
-  Адрес  <input type="text" name="adres" id="adres"/></br>
-  Серия  <input type="text" name="seria" id="seria"/></br>
-  Номер  <input type="text" name="nomerp" id="nomerp"/></br>
-  Кем выдан  <input type="text" name="kem" id="kem"/></br>
+  Номер телефона <input type="text" name="telefon" id="telefon" placeholder="Обязательно для заполнения" required/>
+  Адрес  <input type="text" name="adres" id="adres" placeholder="Обязательно для заполнения" required/></br>
+  Серия  <input type="text" name="seria" id="seria" placeholder="Обязательно для заполнения" required/></br>
+  Номер  <input type="text" name="nomerp" id="nomerp" placeholder="Обязательно для заполнения" required/></br>
+  Кем выдан  <input type="text" name="kem" id="kem" placeholder="Обязательно для заполнения" required/></br>
   Дата выдачи  <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="data" id="data"/></br>
-  Код подразделения  <input type="text" name="kodp" id="kodp"/></br>
+  Код подразделения  <input type="text" name="kodp" id="kodp" placeholder="Обязательно для заполнения" required/></br>
 
   <input type="submit" name="submit" value="Далее"/>
 </form>
@@ -56,9 +56,6 @@ catch (PDOException $e) {
 }
 if(isset($_POST["submit"]))
 {
-if($_POST["familiya"] =="" || $_POST["name"]=="" || $_POST["otchestvo"] ==""){echo "Введите логин, пароль и Email";}
-
- else {
     $sql_select = "SELECT * FROM klient_tbl";
     $stmt = $conn->query($sql_select);
     if ($stmt->fetchColumn() > 0) {
