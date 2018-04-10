@@ -23,8 +23,8 @@ border: 0 none; }
 </style>
 </head>
 <body>
-<h1>Оформление заявки</h1>
-<p>Заполните анкету.</p>
+<h1>Заполнение анкеты</h1>
+<p>Заполните анкету и нажмите на кнопку <b>Результат</b> для проверки заявки.</p>
 <form method="post" action="anketa.php">
 Пол <select name="pol">
   <option value ="0">Муж</option>
