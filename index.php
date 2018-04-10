@@ -82,4 +82,5 @@ if($_POST["familiya"] =="" || $_POST["name"]=="" || $_POST["otchestvo"] ==""){ec
       }
     }
   }
+}
 ?>
