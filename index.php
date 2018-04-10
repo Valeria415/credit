@@ -24,7 +24,7 @@ border: 0 none; }
 </style>
 </head>
 <body>
-    <h1>Оформление ипотеки</h1>
+    <h1>Оформление заявки</h1>
     <p>Введите свои данные и перейдите по кнопке<strong> "Далее" </strong> .</p>
 <form method="post" action="anketa.php">
   Фамилия  <input type="text" name="familiya" id="familiya" required/></br>
