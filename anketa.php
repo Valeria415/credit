@@ -157,7 +157,7 @@ if (isset($_POST['submit'])) {
  $stmt->bindValue(24, $nachkap);
  $stmt->execute();
   
- $a = (int) $_POST['pol']; 
+ /* $a = (int) $_POST['pol']; 
  $b = (int) $_POST['age']; 
  $c = (int) $_POST['sp']; 
  $d = (int) $_POST['educat']; 
@@ -174,7 +174,7 @@ if (isset($_POST['submit'])) {
 If ($z>3 && $z=3)
 {echo "Ваша заявка одобрена!"}
  else if ($z<3)
- {echo "Ваша заявка не одобрена!"}
+ {echo "Ваша заявка не одобрена!"}*/
 }
 
 ?>
