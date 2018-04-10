@@ -27,7 +27,7 @@ border: 0 none; }
     <h1>Оформление ипотеки</h1>
     <p>Введите свои данные и перейдите по кнопке<strong> "Далее" </strong> .</p>
 <form method="post" action="anketa.php">
-  Фамилия  <input type="text" name="familiya" id="familiya"/></br>
+  Фамилия  <input type="text" name="familiya" id="familiya" placeholder="Обязательно поле для заполнения" required/></br>
   Имя  <input type="text" name="name" id="name"/></br>
   Отчество  <input type="text" name="otchestvo" id="otchestvo"/></br>
   Дата рождения <input type="date" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}" name="birthday"/></br>
