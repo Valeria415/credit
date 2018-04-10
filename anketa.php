@@ -157,7 +157,7 @@ if (isset($_POST['submit'])) {
  $stmt->bindValue(24, $nachkap);
  $stmt->execute();
   
- /* $a = (int) $_POST['pol']; 
+ $a = (int) $_POST['pol']; 
  $b = (int) $_POST['age']; 
  $c = (int) $_POST['sp']; 
  $d = (int) $_POST['educat']; 
@@ -167,14 +167,14 @@ if (isset($_POST['submit'])) {
  $p = (int) $_POST['prsel']; 
  $m = (int) $_POST['prop']; 
  $n = (int) $_POST['srok']; 
- $x1 = ($a+$b+$c+$d+$e); 
- $x2 = ($f+$g+$p);
- $z= ($x1*0.15+$x2*0.3+$m*0.25);
+ $x1 = ($a+$b+$c+$d); 
+ $x2 = ($e+$f+$g+$p);
+ $sum= ($x1*0.15+$x2*0.3+$m*0.25);
   
-If ($z>3 && $z=3)
+If ($sum>3 && $sum=3)
 {echo "Ваша заявка одобрена!"}
- else if ($z<3)
- {echo "Ваша заявка не одобрена!"}*/
+ else if ($sum<3)
+ {echo "Ваша заявка не одобрена!"}
 }
 
 ?>
